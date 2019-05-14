@@ -1,0 +1,50 @@
+.head{
+  background: #ec2b13;
+  color:#fff;
+  height:50px;
+  line-height:50px;
+  font-size:38rpx;
+  font-weight: blod;
+  margin-bottom:10rpx;
+}
+.row{
+  display:flex;
+  flex-direction: row;
+}
+.unread{
+  width:50%;
+  border-right:1px solid #ccc;
+  text-align: center;
+}
+.readed{
+  width:50%;
+  text-align: center;
+}
+.point{
+  display:block;
+  text-align: center;
+  font-size:28rpx;
+  color:#696969;
+
+}
+.left20{
+  margin-left:20rpx;
+  margin-bottom:5rpx;
+}
+.one{
+  font-size:32rpx;
+  margin-bottom:10rpx;
+  border-bottom: 1px solid #ccc;
+  position:relative;
+}
+.img{
+  position: absolute;
+  top:50%;
+  margin-top:-10px;
+  right:20px;
+  width:20px;
+  height:20px;
+}
+.noactive{
+   background: #ccc;
+}

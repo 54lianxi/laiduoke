@@ -1,0 +1,56 @@
+<view style="background:#eee;overflow:hidden;">
+  <text class="title">订单中心</text>
+  <view class="content">
+    <block wx:for="{{list}}" wx:for-item="item" wx:for-index="index">
+      <view class="one">
+        <view class="time">{{item.createTime}}</view>
+        <view class="top height">
+          <view>订单ID：{{item.orderId}}</view>
+          <view>设备名称：{{item.deviceName}}({{item.merchantName}})</view>
+        </view>
+        <view class="bottom height">
+          <view class="row">
+            <view class="col1">商品名称/单价/数量</view>
+            <view class="col2">总金额/渠道</view>
+            <view class="col3">状态</view>
+          </view>
+
+          <view class="row">
+            <view class="goodDetail">
+              <view class="detail" bindtap="detail" data-index="{{index}}" data-status="{{item.status}}">
+                <view   wx:if="{{item.goodsDetail1.length>1&&item.status==true}}">
+                  <block wx:for="{{item.goodsDetail1}}" wx:for-item="item" wx:for-index="index">
+                    <view class="height">{{item.name}}/¥{{item.salePrice/100}}/{{item.number}}</view>
+                  </block>
+                </view>
+                <view  wx:else>                 
+                    <view class="height">{{item.goodsDetail.name}}/¥{{item.goodsDetail.salePrice/100}}/{{item.goodsDetail.number}}</view>                  
+                </view>
+                <view class="height" wx:if="{{item.goodsDetail1.length>1&&item.status==false }}" style="color:blue;">...</view>
+              </view>
+
+            </view>
+            <view class="col2">
+              <view>¥{{item.payAmount/100}}</view>
+              <view wx:if="{{item.payChannel=='wxpay'}}">微信支付</view>
+              <view wx:if="{{item.payChannel=='alipay'}}">支付宝支付</view>
+            </view>
+            <view class="col3">
+              <!-- <view>{{item.createTime}}</view> -->
+              <view wx:if="{{item.payStatus==1}}" style="color:green;">支付成功</view>
+              <view wx:if="{{item.payStatus==0}}" style="color:red;">未支付</view>
+            </view>
+
+          </view>
+
+        </view>
+      </view>
+    </block>
+  </view>
+  <view>
+    <text class="point" wx:if="{{nomore}}">已无更多</text>
+  </view>
+  <view>
+    <text class="point" wx:if="{{nodata}}">您暂时还没有任何记录</text>
+  </view>
+</view>

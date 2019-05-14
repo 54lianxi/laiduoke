@@ -1,0 +1,10 @@
+@import "../couponList/couponList.wxss";
+.one{
+  background: #fff;
+}
+.one2{
+  background: #eee;
+}
+.fontcolor{
+  color:#ccc;
+}

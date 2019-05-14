@@ -1,0 +1,67 @@
+<view>
+  好地方好的搜个感觉发动机给你偶奇偶发工具副科级噢ID房价高评分积分破空间的股票公开快递费机构ID付加工费的结果对方即可空地方机构ID附件花费打破国际东方地方开工个解放跌破该开发频道看到港囧播放的广东佛 控股东风破格个卡佛牌大公开九分裤iPod攻破对方奇偶的感觉 感觉可怕的房价高的皮肤更好看的咖啡馆不扣分工配合看房动工开发东莞和咖啡蛋糕金佛定价
+</view>
+<view class="game ">
+
+
+<view class="baffle">
+  <view class="box">
+    <view class="top">
+      <!-- <image src="../image/title.png" mode="widthFix"></image> -->
+      <text>剪刀石头布</text>
+    </view>
+    <view class="center">
+      <image src="../image/background.png" mode="widthFix"></image>
+      <view class="con">
+        <view>
+          <image src="../image/{{leftImg}}" class="left" mode="widthFix"></image>
+          <image src="../image/vs.png" class="cen" mode="widthFix"></image>
+          <image src="../image/{{rightImg}}" class="right" mode="widthFix"></image>
+          <image src="../image/{{go}}" class="choose" mode="widthFix" wx:if="{{goShow}}"></image>
+          <image src="../image/choose.gif" class="choose" mode="widthFix" wx:if="{{chooseShow}}" style="width:300rpx;margin-left:-150rpx;top:159rpx;"></image>
+          <image src="../image/success.gif" class="choose" mode="widthFix" style="width:500rpx;margin-left:-250rpx;" wx:if="{{successShow}}"></image>
+          <image src="../image/fail.gif" class="choose" mode="widthFix" style="width:500rpx;margin-left:-250rpx;" wx:if="{{failShow}}"></image>
+          <image src="../image/dogfall.gif" class="choose" mode="widthFix" style="width:400rpx;margin-left:-200rpx;top:146rpx;" wx:if="{{dogfallShow}}"></image>
+        </view>
+        <view class="box2">
+          <image src="../image/board.png"  mode="widthFix" class="board"></image>
+          <view>
+            <view  class="fist" bindtap="clickFist" wx:if="{{fistShow}}"></view>
+            <view  class="scissors" bindtap="clickScissors" wx:if="{{scissorsShow}}"></view>
+            <view class="cloth" bindtap="clickCloth" wx:if="{{clothShow}}"></view>
+            <!-- <image src="../image/fist.png" mode="widthFix"></image> -->
+            <!-- <image src="../image/scissors.png" mode="widthFix"></image> -->
+            <!-- <image src="../image/cloth.png" mode="widthFix"></image> -->
+          </view>
+          <image src="../image/aperture.png" class="aperture" mode="widthFix" style="left:{{left}}rpx;"></image>
+          <image src="../image/click.gif" class="click"  mode="widthFix" style="left:{{clickLeft}}rpx;" wx:if="{{clickShow}}"></image>
+        </view>
+        <view class="row" style="height:70rpx;">
+            <view class="btn-box" bindtap="return">
+               <image src="../image/btn.png" class="btn-img"  mode="widthFix"></image>
+               <view class="text">
+                 <text>返回</text>
+               </view>
+               
+            </view>
+            <view class="btn-box btn-box2" bindtap="continue">
+               <image src="../image/btn.png" class="btn-img" mode="widthFix"></image>
+               <view class="text">
+                 <text>继续夺宝</text>
+               </view>
+               
+            </view>
+            
+        </view>
+              <view  class="progress">
+                <image src="../image/100.png" style="right:{{proRight}}%;"></image>
+              </view>
+
+              
+      </view>
+    </view>
+    <view>
+    </view>
+  </view>
+</view>
+</view>

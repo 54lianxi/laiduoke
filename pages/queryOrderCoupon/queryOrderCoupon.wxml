@@ -1,0 +1,45 @@
+<view>
+  <view class="totalmoney">总金额:¥{{totalFee/100}}</view>
+  <view style="margin-bottom:50px;">
+    <radio-group bindchange="change">
+      <block wx:for="{{couponInfo}}" wx:for-item="item" wx:for-index="index">
+      <view>
+        <!-- <label> -->
+          <view class="one {{totalFee>=item.orderThreshold?'':'one2'}}" >
+            <view class="detail">
+              <view class="top">
+                <view>
+                  <view class="row">
+                    <view class="bot5 top10">
+                      <text>¥ </text>
+                      <text class=" bigfont {{totalFee>=item.orderThreshold?'':'fontcolor'}}">{{item.amount/100}}</text>
+                    </view>
+                    <view class="bot5" style="margin-top:19px;margin-left:20rpx;">满{{item.orderThreshold/100}}可用</view>
+                  </view>
+
+                  <view class="bot5">
+                    有效日期：{{item.deadline}}
+                  </view>
+                </view>
+                <radio id="{{index}}" value="{{index}}" wx:if="{{totalFee>=item.orderThreshold}}" checked="{{item.checked}}"  bindtap="tapRadio" data-id="{{index}}"></radio>
+              </view>
+            </view>
+
+          </view>
+        <!-- </label> -->
+      </view>
+      </block>
+    </radio-group>
+
+
+  </view>
+  <view class="bottom">
+    <view class="le">
+      <text class="totalNum" wx:if="{{totalnum!=0}}">{{totalnum}}</text>
+    </view>
+    <view class="le">
+      <text class="price1">¥{{totalPrice/100}}</text>
+    </view>
+    <button bindtap="order" disabled="{{disabled}}">去支付</button>
+  </view>
+</view>

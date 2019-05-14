@@ -1,0 +1,17 @@
+.author{
+  padding-top:50rpx;
+  margin-left:20rpx;
+  height:100rpx;
+  display:block;
+  font-size:30rpx;
+}
+.flex{
+  display:flex;
+  flex-direction: row;
+}
+.btn{
+  width:700rpx;
+  background: #1AAD19;
+  color:white;
+  font-size:34rpx;
+}

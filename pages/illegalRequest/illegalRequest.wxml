@@ -1,0 +1,13 @@
+<view class='illegalContainer'>
+  <view class='content'>
+  <view id='icon-container'>
+    <icon type='clear'size='70' color='red'></icon>
+  </view>
+  <view class='errorMsg'>
+    <text>{{errorMsg}}</text>
+  </view>
+  <view class='btn-container'>
+    <button bindtap='rescan' class='sure' type='primary'>重新扫码</button>
+  </view>
+  </view>
+</view>

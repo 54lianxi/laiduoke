@@ -1,0 +1,21 @@
+<view>
+  <view class="head row">
+    <view class="unread {{active}}" bindtap="unreadTap">未读通知</view>
+    <view  class="readed {{active2}}" bindtap="readedTap">已读通知</view>
+  </view>
+  <view class="content">
+     <block wx:for="{{list}}" wx:for-item="item"  wx:for-index="index">
+     <navigator url="/pages/noticeDetail/noticeDetail?noticeId={{item.noticeId}}&&subject={{item.subject}}&&content={{item.content}}&&createTime={{item.createTime}}&&status={{item.status}}">
+     <view class="one">
+        <image src="../../image/toright.png" class="img"></image>
+        <view class="left20">标题:{{item.subject}}</view>
+        <view class="left20">时间:{{item.createTime}}</view>
+     </view>
+     </navigator>
+     </block>
+     <view class="point" wx:if="{{nodata}}" style="font-size:34rpx;margin-top:50rpx;">目前暂无任何记录</view>
+  </view>
+  <view>
+       <text class="point" wx:if="{{nomore}}">已无更多</text>
+  </view>
+</view>

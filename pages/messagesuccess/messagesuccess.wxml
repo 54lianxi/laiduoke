@@ -1,0 +1,11 @@
+<view class='container'>
+  <view class='icon-container'>
+    <icon type='success'size='70'></icon>
+  </view>
+  <view class='successInfo'>
+    <text>感谢您的宝贵意见,我们将会尽快与您取得联系</text>
+  </view>
+  <view class='btn-container'>
+    <button bindtap='toIndex' class='sure' type='primary'>前往主页</button>
+  </view>
+</view>

@@ -1,0 +1,38 @@
+<!--pages/customerService/customerService.wxml-->
+<view>
+  <view>
+    <view class="title">反馈表单</view>
+  </view>
+  <picker range="{{range}}" style="font-size:32rpx;line-height:40px;width:50%;overflow:hidden;width:100%;" bindchange="change">
+    <text decode="{{true}}" style="display:block;margin-left:5%;font-size:34rpx;float:left;width:60%;text-align:left;">故障原因:&emsp;&emsp;{{type}}</text>
+    <image src="../../image/bottom.png" style="width:20px;height:20px;float:right;margin-top:10px;margin-right:100rpx;"></image>
+  </picker>
+  <view class="bot10">
+    <textarea bindinput="content" placeholder='建议内容' disabled="{{alldis}}"></textarea>
+  </view>
+  <view class="row bot10" wx:if="{{deviceIdShow}}">
+    <input bindinput="deviceId" placeholder='设备号' type="number"  disabled="{{alldis}}"></input>
+  </view>
+  <view class="row bot10">
+    <input bindinput="name" placeholder='姓名'  disabled="{{alldis}}"></input>
+  </view>
+  <view class="row bot10">
+    <input bindinput="phone" placeholder='手机号' type="number"  disabled="{{alldis}}"></input>
+  </view>
+  <view class="row bot10" style="margin-left:5%;margin-right:5%;">
+    <block wx:for="{{picture}}" wx:for-item="item">
+      <image src="{{item}}" wx:if="{{index!=3}}" mode="widthFix" style="width:22%;margin-right:4%;" bindtap="picDetail" data-index="{{index}}"></image>
+      <image src="{{item}}" wx:else mode="widthFix" style="width:22%;"  bindtap="picDetail" data-index="3"></image>
+    </block>
+    <view style="width:22%;height:120rpx;;border:1px solid #ccc;line-height:120rpx;display: table-cell;"  bindtap="addpic" wx:if="{{addShow}}">
+      <image src="../../image/addpic.png"  mode="widthFix"  style="display:block;width:80rpx;height:80rpx;margin:20rpx auto;"></image>
+    </view>      
+  </view>
+  <button class="submit bot10" bindtap="submit" disabled="{{disabled2}}">提交意见</button>
+  <navigator url="/pages/queryAdviseList/queryAdviseList" class="record bot10">查看建议记录</navigator>
+</view>
+<view class="picDetail" wx:if="{{picDetailShow}}">
+  <image src="{{picUrl}}"  mode="widthFix" style="width:90%;margin-left:5%;margin-top:150rpx;"></image>
+  <image src="../../image/close.png" style="width:60rpx;height:60rpx;position:absolute;top:50rpx;right:50rpx;" bindtap="close"></image>
+  <image src="../../image/del.png" style="width:60rpx;height:60rpx;position:absolute;top:50rpx;left:50rpx;" bindtap="delete" ></image>
+</view>

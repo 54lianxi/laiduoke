@@ -1,0 +1,33 @@
+<view>
+  <text class="title">可领卡券</text>
+  <view>
+    <block wx:for="{{list}}" wx:for-item="item">
+    <view class="one">
+      <view class="detail">
+        <view class="top row">
+          <view>
+            <view class="row">
+              <view class="bot5 top10">
+                <text>¥ </text>
+                <text class="bigfont"> {{item.amount/100}}</text>
+              </view>
+              <view class="bot5" style="margin-top:19px;margin-left:20rpx;">满{{item.orderThreshold/100}}可用</view>
+            </view>
+
+            <view class="bot5">
+              有效日期：{{item.deadline}}
+            </view>
+          </view>
+          <view class="receive" bindtap="getCoupon" wx:if="{{item.getStatus==0}}" data-index="{{index}}">领取</view>
+          <view class="receive" style="background:#fff;color:#ccc;" wx:if="{{item.getStatus==1}}">已领取</view>
+        </view>
+        <text class="bot5 tip">{{item.tip}}</text>
+      </view>
+
+    </view>
+    </block>
+  </view>
+  <view class="title" wx:if="{{nodata}}">当前没有可以领取的优惠券</view>
+  <view class="point"  wx:if="{{nomore}}">已无更多</view>
+  <button bindtap='toIndex' class='sure' type='primary'>前往主页</button>
+</view>

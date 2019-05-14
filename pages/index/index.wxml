@@ -1,0 +1,47 @@
+<!--pages/index/index.wxml-->
+<view class='indexContainer'>
+  <view class='userInfo'>
+    <image bindtap="bindViewTap" class="userinfo-avatar" src="{{wxHeadPic}}" background-size="cover"></image>
+    <view class='userinfo-data'>
+      <view class="userinfo-nickname" style='font-size: 36rpx;'>{{wxName}}</view>
+      <view class='place'>
+        <text class="userinfo-nickname">{{province}}  </text>
+        <text class="userinfo-nickname">{{city}}</text>
+      </view>
+    </view>
+  </view>
+  <view bindtap="toNoticeList" wx:if="{{noticeNum>0}}" class="notice">您有
+  <text style="color:#EC2B13;">{{noticeNum}}</text>
+  条新通知</view>
+  <view>
+    <view class="item" bindtap="toTicket">
+      <image src="../../image/ticket.png" class="icon"></image>
+      <text>卡券中心</text>
+      <image src="../../image/toright.png" style="height:20px;width:20px;vertical-align:middle;margin-left:350rpx;"></image>
+    </view>
+    <view class="item" bindtap="orderCenter">
+      <image src="../../image/orderCenter.png" class="icon"></image>
+      <text>订单中心</text>
+      <image src="../../image/toright.png" style="height:20px;width:20px;vertical-align:middle;margin-left:350rpx;"></image>
+    </view>
+        <view class="item" bindtap="showBox">
+      <image src="../../image/mall.png" class="icon"></image>
+      <text>商城购物</text>
+      <image src="../../image/toright.png" style="height:20px;width:20px;vertical-align:middle;margin-left:350rpx;"></image>
+    </view>
+  </view>
+  <view class='container'>
+    <button bindtap='scanCodeLogin' class='scanCodeLogin' type='primary'>扫码</button>
+  </view>
+</view>
+<view style="position:fixed; top:0; left:0;   z-index:101;width:100%;height:100%;background: rgba(0,0,0,.6);"   wx:if="{{boxShow}}"
+>
+<view class="s_box">
+<image src="../../image/close2.png" mode="widthFix" bindtap="close"></image>
+<view class="row">
+  <input placeholder='请输入设备编号' bindinput='mallInput' type="number"></input>
+  <button type="primary" class="btn" bindtap="search" disabled='{{dis}}'>进入商城</button>
+</view>
+  
+</view>
+</view>

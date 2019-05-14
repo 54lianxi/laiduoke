@@ -1,0 +1,12 @@
+.title{
+  text-align: center;
+  margin-top:20px;
+  margin-bottom:10px;
+  color:#696969;
+  font-weight: bold;
+}
+.left20{
+  margin-left:20rpx;
+  margin-bottom:8rpx;
+  font-size:32rpx;
+}

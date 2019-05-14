@@ -1,0 +1,42 @@
+.row{
+  display:flex;
+  flex-direction: row;
+}
+.title{
+  text-align: center;
+  margin-top:20px;
+  margin-bottom:10px;
+  color:#696969;
+  font-weight: bold;
+}
+.one{
+  margin-bottom:10px;
+  border-bottom:1px solid #ccc;
+  font-size:32rpx;
+  position:relative;
+}
+.fr{
+  float:right;
+  margin-right:120rpx;
+}
+.left20{
+  margin-left:20rpx;
+}
+.pos_img{
+  position:absolute;
+  top:10rpx;
+  right:30rpx;
+  width:40rpx;
+  height:40rpx;
+}
+.point{
+  display:block;
+  text-align: center;
+  font-size:28rpx;
+  color:#696969;
+
+}
+.notice{
+  text-align: center;
+  background: #ccc;
+}

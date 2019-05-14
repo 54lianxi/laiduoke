@@ -1,0 +1,80 @@
+/* pages/CouponList/CouponList.wxss */
+page{
+  font-size:32rpx;
+}
+.row{
+  display:flex;
+  flex-direction: row;
+}
+.one{
+  background: #eee;
+  position:relative;
+  width:94%;
+  border:1px solid #ccc;
+  margin:0 auto 10px auto;
+  border-radius:25px 0 0 0;
+  
+}
+.detail{
+  /* width:70%; */
+  
+  font-size:28rpx;
+  
+}
+.receive{
+  width:50px;
+  height:25px;
+  background:#ec2b13;
+  border-radius: 5px; 
+  color:#fff;
+  text-align: center;
+  line-height: 25px;
+  position: absolute;
+  top:20%;
+  right:10%;
+  font-size:32rpx;
+  
+}
+.bigfont{
+  font-size:40rpx;
+  color:#ec2b13;
+}
+.bot5{
+  margin-bottom:5rpx;
+}
+.top10{
+  margin-top:10px;
+}
+.top{
+  padding-left:5%;
+  border-bottom:1px dashed #ccc;
+  
+}
+.tip{
+  padding:5rpx 0 5rpx 5%;
+  display:block;
+}
+.price{
+  height:30px;
+  line-height: 30px;
+}
+.title{
+  text-align: center;
+  margin-top:20px;
+  margin-bottom:10px;
+  display:block;
+}
+.point{
+  display:block;
+  text-align: center;
+  font-size:28rpx;
+  color:#696969;
+  margin-bottom:10px;
+
+}
+.sure{
+  width:94%;
+  height:40px;
+  line-height:40px;
+  margin-bottom:20px;
+}

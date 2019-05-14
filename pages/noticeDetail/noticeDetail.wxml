@@ -1,0 +1,13 @@
+<view>
+  <view class="title">通知详情</view>
+  <view class="left20">
+    标题:{{subject}}
+  </view>
+  <view class="left20">
+    时间:{{createTime}}
+  </view>
+  <view class="left20">
+    通知内容:
+  </view>
+  <view  class="left20">{{content}}</view>
+</view>

@@ -1,0 +1,25 @@
+<view>
+  <view class="title">建议记录</view>
+  <block wx:for="{{list}}" wx:for-item="item" wx:for-index="index">
+     <navigator url="/pages/adviseDetail/adviseDetail?adviseType={{item.adviseType}}&&adviseSubject={{item.adviseSubject}}&&adviseContent={{item.adviseContent}}&&adviseImages={{item.adviseImages}}&&deviceId={{item.deviceId}}&&deviceName={{item.deviceName}}&&name={{item.name}}&&mobile={{item.mobile}}&&replyName={{item.replyName}}&&replyContent={{item.replyContent}}&&replyTime={{item.replyTime}}&&status={{item.status}}&&replyContent={{item.replyContent}}&&modifyTime={{item.modifyTime}}&&createTime={{item.createTime}}">
+    <view class="one">
+      <image src="../../image/toright.png" class="pos_img"></image>
+      <view>
+        <text class="left20">{{item.adviseSubject}}</text>
+        <text class="fr">{{item.createTime}}</text>
+        
+      </view>
+      <view class="left20">
+        <view>{{item.adviseContent}}</view>
+      </view>
+    </view>
+    </navigator>
+    
+  </block>
+  <view>
+       <text class="point" wx:if="{{nomore}}">已无更多</text>
+  </view>
+  <view>
+       <text class="point" wx:if="{{nodata}}">您暂时还没有任何记录</text>
+  </view>
+</view>

@@ -1,0 +1,31 @@
+<view>
+  <text class="title">卡券中心</text>
+  <view  style="overflow:hidden;">
+    <block wx:for="{{list}}" wx:for-item="item">
+      <view class="one {{item.useStatus == 0  ?'':'one2'}}">
+        <view class="detail">
+          <view class="top row">
+            <view>
+              <view class="row">
+                <view class="bot5 top10">
+                  <text>¥ </text>
+                  <text  class="bigfont {{item.useStatus == 0 ?'':'fontcolor'}}"> {{item.amount/100}}</text>
+                </view>
+                <view class="bot5" style="margin-top:19px;margin-left:20rpx;">满{{item.orderThreshold/100}}可用</view>
+              </view>
+
+              <view class="bot5">
+                有效日期：{{item.deadline}}
+              </view>
+            </view>
+            <view wx:if="{{item.useStatus == 1}}" style="margin-top:20px;margin-left:70rpx;">已使用</view>
+          </view>
+          <text class="bot5 tip">{{item.tip}}</text>
+        </view>
+
+      </view>
+    </block>
+  </view>
+  <view class="title" wx:if="{{nodata}}">您当前还没有领取优惠券哦</view>
+  <view class="point"  wx:if="{{nomore}}">已无更多</view>
+</view>

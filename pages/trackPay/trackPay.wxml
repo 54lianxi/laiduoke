@@ -1,0 +1,29 @@
+<view>
+  <view class="title">订单详情</view>
+  <view style="width:100%;margin-bottom:10px;">
+    <!-- 商品图片: -->
+    <image src="{{picture}}" mode="widthFix" style="width:150px;text-align:center;display:block;margin:0 auto;"></image>
+  </view>
+  <view class="a row">
+    <view class="left">商品名称: </view>
+    <view class="right">{{name}}</view>
+  </view>
+  <view class="a row">
+    <view class="left">货道号：</view>
+    <view class="right">{{trackNo1}}</view>
+
+  </view>
+  <view class="a row">
+    <view class="left">单价:</view>
+    <view class="right">{{saleSprice/100}}</view>
+  </view>
+  <view class="a row">
+    <view class="left">数量:</view>
+    <view class="right">1</view>
+  </view>
+</view>
+<view class="price1"> 
+  <view style="float:right;">¥{{saleSprice/100}}</view>
+  <view style="font-size:36rpx;line-height:60rpx;height:60rpx;float:right">总金额：</view>
+</view>
+<button bindtap="queryOrderAndCoupon" disabled="{{disabled}}">立即支付</button>

@@ -1,0 +1,158 @@
+<view>
+  <view class="head row">
+    <view class="logo">
+      <image src="../../image/logo.png"></image>
+    </view>
+    <view class="search">
+    </view>
+    <view class="scavenging" bindtap="scanCodeLogin">
+      <image src="../../image/scan.png"></image>
+    </view>
+    <view class="userInfo">
+      <view>
+        <image src="{{wxHeadPic}}" class="pic"></image>
+      </view>
+    </view>
+  </view>
+  <view bindtap="toNoticeList" wx:if="{{noticeNum>0}}" class="notice">您有
+  <text style="color:#EC2B13;">{{noticeNum}}</text>
+  条新通知</view>
+  <view id="ad" style="top:{{adtop}}px;" >
+    <swiper indicator-active-color="#ec2b13" autoplay interval="6000" circular="true" wx:if="{{adShow}}"  style="height:{{adheight}}px;" >
+      <block wx:for="{{adList}}" wx:for-item="item" wx:for-index="index">
+        <swiper-item wx:if="{{item.type==1}}">
+          <navigator url="../webView/webView?url={{item.jumpUrl}}"   >
+            <image src="{{item.imgUrl}}" mode="widthFix" style="width:100%;" bindload="{{index==0?'imgInfo':''}}"></image>
+          </navigator>
+        </swiper-item>
+        <swiper-item wx:if="{{item.type==2}}">
+          <navigator url="{{item.jumpUrl}}">
+            <image src="{{item.imgUrl}}" mode="widthFix" style="width:100%;" bindload="{{index==0?'imgInfo':''}}"></image>
+          </navigator>
+        </swiper-item>
+      </block>
+    </swiper>
+
+  </view>
+  <view class="content row" style="top:{{contenttop}}px;">
+    <view class="left" wx:if="{{leftShow}}" style="top:{{contenttop}}px;height:{{height}}px;">
+      <block wx:for="{{category}}" wx:for-item="item">
+        <view class="{{index===navActive?'active':''}}" data-index="{{index}}" data-id="b{{index}}" bindtap="tap">{{item.categoryName}}</view>
+      </block>
+      <view class="site"></view>
+    </view>
+    <scroll-view class="right" scroll-y="true" scroll-into-view="{{toView}}" style="height:{{height}}px;margin-left:{{left}}" bindscroll="scroll" scroll-with-animation='true'>
+      <block wx:for="{{detail}}" wx:for-item="item">
+        <view style="overflow:hidden;">
+          <view class="identify" id="b{{index}}" wx:if="{{leftShow}}">{{category[index].categoryName}}</view>
+          <block wx:for="{{item}}" wx:for-item="good">
+            <view class="one" style="position:relative;">
+              <image src="{{good.image}}" class="goodImg le" bindtap="toDetail" data-barcode="{{good.barcode}}"></image>
+              <view style="color:#ec2b13;width:20px;height:14px;position:absolute;top:0;left:50px;border:1px solid #ec2b13;font-size:18rpx;border-radius:5px;" wx:if="{{good.saleFlag!=0}}">
+                <text class="saleFlag" wx:if="{{good.saleFlag==1}}">热卖</text>
+                <text class="saleFlag" wx:if="{{good.saleFlag==2}}">打折</text>
+                <text class="saleFlag" wx:if="{{good.saleFlag==3}}">特价</text>
+                <text class="saleFlag" wx:if="{{good.saleFlag==4}}">体验</text>
+              </view>
+              <view>
+                <view class="top">
+                  <text class="goodName">{{good.name}}</text>
+                </view>
+                <view class="bot"  style="position:relative;">
+                  <view class="price  le">
+                    <text class="price3">¥{{good.salePrice/100}}</text>
+                    <text class="price4" wx-if="{{good.originalSalePrice!=0}}">¥{{good.originalSalePrice/100}}</text>
+
+                  </view>
+                  
+                  <view class="ri row" wx:if="{{good.canBuyNum>0}}">
+                    <view class="row" wx:if="{{goodnum[good.barcode]!=null && goodnum[good.barcode]!=0 }}">
+                      <view style="width:40px;height:40px;" bindtap="reduce" data-barcode="{{good.barcode}}">
+                        <image src="../../image/reduce.png" class="icon add"></image>
+                      </view>
+                      <text class="txt">{{goodnum[good.barcode]}}</text>
+                    </view>
+                    <view style="width:40px;height:40px;" bindtap="add" data-barcode="{{good.barcode}}" style="position:relative;">
+                      <image src="../../image/add.png" class="icon"></image>
+                      <!-- <image src="{{good.image}}" style="position:absolute;top:10px;left:10px;width:20px;height:20px;border-radius:200px;display:{{an_img}};"></image>  -->
+                    </view>
+                  </view>
+                  <view style="float:right;margin-left:20rpx;font-size:32rpx;position:absolute;top:0rpx;right:220rpx;color :blue;" wx:if="{{gameFlag==1&&good.canBuyNum>0}}">
+                  <navigator url="/pages/gameRule/gameRule?image={{good.image}}&&name={{good.name}}&&price={{good.salePrice}}&&deviceId={{deviceId}}&&weixinNickname={{wxName}}&&weixinHead={{wxHeadPic}}&&goodsBarcode={{good.barcode}}">
+                     <text>搏一搏</text>
+                  </navigator>
+                  </view>
+                </view>
+
+              </view>
+
+            </view>
+          </block>
+        </view>
+      </block>
+      <view class="site"></view>
+    </scroll-view>
+  </view>
+  <view class="bottom">
+    <view class="le">
+      <image src="../../image/shoppingCart.png" class="shopImg" bindtap="onCart"></image>
+      <text class="totalNum" wx:if="{{totalnum!=0}}">{{totalnum}}</text>
+    </view>
+    <view class="le">
+      <text class="price1">¥{{totalPrice/100}}</text>
+    </view>
+    <button bindtap="paymoney" disabled="{{disabled}}">买单</button>
+  </view>
+</view>
+<view class="cartContainer" wx:if="{{cartShow}}" catchtap="close">
+  <view class="cart" catchtap="a">
+    <view class="intro">
+      <view class="le">已购商品</view>
+      <view class="ri" bindtap="reset">
+        <image src="../../image/delete.png" class="deleteImg"></image>
+        <text>清空购物车</text>
+      </view>
+    </view>
+    <block wx:for="{{cartDetail}}" wx:for-item="item">
+      <view class="cartOne" style="overflow:hidden;">
+        <text class="le" style="font-size:30rpx;width:300rpx;">{{item.goodname}}</text>
+        <text class="le cartPrice">¥{{item.price/100}}</text>
+        <view class="ri row">
+          <view class="imgBox" catchtap="reduce" data-barcode="{{item.id}}">
+            <image src="../../image/reduce.png" class="icon add icon2"></image>
+          </view>
+          <text class="cartNum">{{item.num}}</text>
+          <view class="imgBox" catchtap="add" data-barcode="{{item.id}}">
+            <image src="../../image/add.png" class="icon icon2"></image>
+          </view>
+
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+<view class="detailContainer" wx:if="{{detailShow}}">
+  <view class="close" bindtap="closeDetail">
+    <image src="../../image/close.png" style="width:70rpx;height:70rpx;"></image>
+  </view>
+  <view class="introContainer">
+    <view class="bot10" style="height:30px;line-height:30px;">商品名称:{{goodDetail.name}}</view>
+    <view>
+      <text style="height:30px;line-height:30px;">商品简介：</text>
+      <view style="overflow-y: scroll; width:100%;height:{{detailheight}}px; ">
+        <view class="bot10">
+          {{goodDetail.description}}
+        </view>
+        <view class="imgContainer">
+          <block wx:for="{{goodDetail.imgList}}" wx:for-item="item">
+
+            <image src="{{item}}"></image>
+          </block>
+
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+</view>

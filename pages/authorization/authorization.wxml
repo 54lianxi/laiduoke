@@ -1,0 +1,7 @@
+<view>
+<text class="author">请确认是否授权获取您的个人头像和昵称？</text>
+<view class="flex">
+  <button class="btn" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">确认</button>
+</view>
+
+</view>

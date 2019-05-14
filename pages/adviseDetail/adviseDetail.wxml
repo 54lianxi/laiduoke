@@ -1,0 +1,45 @@
+<view>
+  <view class="title">建议详情</view>
+  <view class="a">创建时间:{{createTime}}</view>
+  <view wx:if="{{status==0}}"  class="a">状态:处理中</view>
+  <view wx:if="{{status==1}}"  class="a">状态:处理完成</view>
+  <view class="a">
+    建议主题:{{adviseSubject}}
+  </view>
+  <view class="a">
+    建议内容:{{adviseContent}}
+  </view>
+  <view  class="a">
+    建议图片:
+    <view class="row" bindtap="imgDetail">
+      <view wx:for="{{adviseImages}}" wx:for-item="item">
+        <image src="{{item}}" mode="widthFix" style="width:150rpx;margin-right:20rpx;"  data-index="{{index}}"></image>
+      </view>
+    </view>
+  </view>
+  <view class="a">
+    设备号:{{deviceId}}
+  </view>
+  <view class="a">
+    设备名称:{{deviceName}}
+  </view>
+  <view class="a">
+    姓名:{{name}}
+  </view>
+  <view class="a">
+    手机号:{{mobile}}
+  </view>
+  <view class="a" wx:if="{{status==1}}"  >
+    回复者姓名:{{replyName}}
+  </view>
+  <view class="a"  wx:if="{{status==1}}"  >
+    回复内容:{{replyContent}}
+  </view>
+  <view class="a" wx:if="{{status==1}}"  >
+    回复时间:{{replyTime}}
+  </view>
+</view>
+<view class="picDetail" wx:if="{{picDetailShow}}">
+  <image src="{{picUrl}}"  mode="widthFix" style="width:90%;margin-left:5%;margin-top:150rpx;"></image>
+  <image src="../../image/close.png" style="width:60rpx;height:60rpx;position:absolute;top:50rpx;right:50rpx;" bindtap="close"></image>
+</view>

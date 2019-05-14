@@ -1,0 +1,111 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "plugin",
+	"libVersion": "2.4.0",
+	"appid": "wx75adde265eea9c0e",
+	"projectname": "%E8%8E%B1%E5%A4%9A%E5%AE%A2",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": 1,
+			"list": [
+				{
+					"id": -1,
+					"name": "进入商城",
+					"pathName": "pages/scanCodeToPage/scanCodeToPage",
+					"query": "q=https%3A%2F%2Fdev.sichang.com.cn%2Fvendor%2F%3Fa%3Dmall%26deviceId%3D10041",
+					"scene": "1011"
+				},
+				{
+					"id": 1,
+					"name": "进入商城",
+					"pathName": "pages/scanCodeToPage/scanCodeToPage",
+					"query": "q=https%3A%2F%2Fdev.sichang.com.cn%2Fvendor%2F%3Fa%3Dmall%26deviceId%3D10058",
+					"scene": 1011
+				}
+			]
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 1,
+			"list": [
+				{
+					"id": 0,
+					"name": "扫码支付",
+					"pathName": "pages/scanCodeToPage/scanCodeToPage",
+					"query": "q=http%3A%2F%2Fdev.sichang.com.cn%2Fvendor%2Fs%3Fa%3Dpay%26para%3D%7B%22d%22%3A10058%2C%22o%22%3A%2210058153438679629042%22%2C%22t%22%3A1534386795%2C%22s%22%3A%225e2285%22%7D",
+					"scene": "1011"
+				},
+				{
+					"id": 1,
+					"name": "进入商城",
+					"pathName": "pages/scanCodeToPage/scanCodeToPage",
+					"query": "q=https%3A%2F%2Fdev.sichang.com.cn%2Fvendor%2F%3Fa%3Dmall%26deviceId%3D10041",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "进入联系客服页面",
+					"pathName": "pages/scanCodeToPage/scanCodeToPage",
+					"query": "q=http%3A%2F%2Fdev.sicahng.com.cn%2Fvendor%2Fs%3Fa%3DcustomerService",
+					"scene": "1011"
+				},
+				{
+					"id": 3,
+					"name": "领取优惠券",
+					"pathName": "pages/scanCodeToPage/scanCodeToPage",
+					"query": "q=https%3A%2F%2Fdev.sichang.com.cn%2Fvendor%2Fs%3Fa%3DcouponList%26m%3D57",
+					"scene": "1011"
+				},
+				{
+					"id": 4,
+					"name": "货道支付",
+					"pathName": "pages/scanCodeToPage/scanCodeToPage",
+					"query": "q=%3Fa%3DtrackPay%26deviceId%3D10057%26trackNo%3DG0-A1",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "ding",
+					"pathName": "pages/orderCenter/orderCenter",
+					"query": "",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "剪刀石头布",
+					"pathName": "pages/test/test",
+					"query": ""
+				},
+				{
+					"id": 7,
+					"name": "游戏支付",
+					"pathName": "pages/scanCodeToPage/scanCodeToPage",
+					"query": "q=http%3A%2F%2Fdev.sichang.com.cn%2Fvendor%2Fs%3Fa%3DpayGame%26para%3D%7B%22d%22%3A10058%2C%22o%22%3A%2210058154200412681329%22%2C%22t%22%3A1542005303%2C%22s%22%3A%221a96cb%22%7D",
+					"scene": "1011"
+				}
+			]
+		}
+	}
+}
